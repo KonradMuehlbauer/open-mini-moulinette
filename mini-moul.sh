@@ -2,7 +2,8 @@
 
 source ~/mini-moulinette/mini-moul/config.sh
 # assignment name
-assignment=NULL
+assignment=$1
+echo $0
 
 function handle_sigint {
   echo "${RED}Script aborted by user. Cleaning up..."
@@ -14,7 +15,7 @@ function handle_sigint {
 
 # Function to determine if current directory matches a pattern
 detect_assignment() {
-  assignment=$(basename "$(pwd)")
+  # assignment=$(basename "$(pwd)")
   [[ $assignment =~ ^C(0[0-9]|1[0-3])$ ]]
 }
 
